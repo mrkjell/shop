@@ -4,7 +4,8 @@ export const Store = React.createContext();
 
 const initialState = {
   products: [],
-  cart: []
+  cart: [],
+  cartIsOpen: false
 };
 
 function reducer(state, action) {
@@ -20,6 +21,11 @@ function reducer(state, action) {
       return {
         ...state,
         cart: action.payload
+      };
+    case "TOGGLE_CART":
+      return {
+        ...state,
+        cartIsOpen: action.payload
       };
     default:
       return state;
