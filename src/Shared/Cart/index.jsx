@@ -19,7 +19,11 @@ export default function Cart() {
       <div className="minicart">
         <h2 className="title">Cart</h2>
         <ProductList {...props} />
+        <div>
+          <button className="button checkout-button">CHECKOUT</button>
+        </div>
       </div>
+      >
     </React.Suspense>
   );
 }

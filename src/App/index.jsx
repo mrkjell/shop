@@ -14,6 +14,7 @@ export default function App(props) {
 
   return (
     <React.Fragment>
+      {console.log(state)}
       <header className="header">
         <div>
           <h1>Products</h1>

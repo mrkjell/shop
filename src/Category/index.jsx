@@ -22,7 +22,7 @@ export default function Category() {
   const addProduct = product =>
     dispatch({
       type: "ADD_TO_CART",
-      payload: product
+      payload: { product: product, qty: 1 }
     });
 
   const props = {
