@@ -1,5 +1,4 @@
 import React from "react";
-import update from "immutability-helper";
 
 export const Store = React.createContext();
 
@@ -17,11 +16,10 @@ function reducer(state, action) {
       const productId = action.payload.product.id;
       let existingProduct = state.cart.find(c => c.product.id === productId);
       if (existingProduct) {
-        return update(state, {
-          cart: {
-            qty: { $set: existingProduct.qty++ }
-          }
-        });
+        existingProduct.qty++;
+        return {
+          ...state
+        };
       } else {
         return {
           ...state,
