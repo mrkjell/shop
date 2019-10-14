@@ -14,7 +14,6 @@ export default function App(props) {
 
   return (
     <React.Fragment>
-      {console.log(state)}
       <header className="header">
         <div>
           <h1>Products</h1>
@@ -24,7 +23,9 @@ export default function App(props) {
           {"   "}
           <Link to="/category">Category</Link>
           {"   "}
-          <button onClick={() => toggleCart()}>Cart {state.cart.length}</button>
+          <button onClick={() => toggleCart()}>Cart {state.cart.reduce((acc, p) => {
+            return acc + p.qty;
+          }, 0)}</button>
         </div>
       </header>
       {props.children}
