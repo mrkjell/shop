@@ -9,7 +9,6 @@ export default function Cart() {
 
   const props = {
     products: state.cart,
-    cart: state.cart,
     imgWidth: 100,
     imgHeight: 100
   };
